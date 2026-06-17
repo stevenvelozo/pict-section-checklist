@@ -2,7 +2,7 @@
 
 /**
  * Tests for the pure tree + progress math (ChecklistModel). No browser, no provider -- just the
- * function that turns a flat item list into a nested tree with leaf-based completion at every tier.
+ * function that turns a flat item list into a nested tree with weighted completion at every tier.
  */
 
 const libChai = require('chai');
@@ -67,8 +67,10 @@ suite('ChecklistModel', function ()
 			libExpect(tmpGroup.Percent).to.equal(33);
 		});
 
-		test('progress rolls up through multiple tiers', function ()
+		test('progress rolls up through tiers by weight, not by leaf count', function ()
 		{
+			// top has two children: a sub-group "mid" (two done leaves) and a plain undone leaf "sib".
+			// Weighted, mid and sib are 50% each, so top is 50% done -- not the 67% a flat 2-of-3 gives.
 			let tmpItems =
 			[
 				{ Key: 'top', ParentKey: null, Sort: 0 },
@@ -78,10 +80,44 @@ suite('ChecklistModel', function ()
 				{ Key: 'sib', ParentKey: 'top', Done: false, Sort: 1 }
 			];
 			let tmpResult = libModel.decorate(tmpItems);
-			libExpect(tmpResult.Overall).to.include({ LeafCount: 3, DoneCount: 2, Percent: 67 });
+			libExpect(tmpResult.Overall).to.include({ LeafCount: 3, DoneCount: 2, Percent: 50 });
 			let tmpTop = tmpResult.Roots[0];
-			libExpect(tmpTop.Percent).to.equal(67);
+			libExpect(tmpTop.Percent).to.equal(50);
 			libExpect(tmpTop.Children[0].Percent).to.equal(100);
+		});
+
+		test('nested items are weighted as a share of their parent, not flat by leaf count', function ()
+		{
+			// Two top-level items: one a group with two children, the other a plain leaf. Each top-level
+			// item is worth 50%; the group splits its 50% into 25% per child.
+			let tmpItems =
+			[
+				{ Key: 'p1', ParentKey: null, Sort: 0 },
+				{ Key: 'p2', ParentKey: null, Done: false, Sort: 1 },
+				{ Key: 'c1', ParentKey: 'p1', Done: false, Sort: 0 },
+				{ Key: 'c2', ParentKey: 'p1', Done: false, Sort: 1 }
+			];
+			let tmpResult = libModel.decorate(tmpItems);
+			libExpect(tmpResult.Roots[0].Weight).to.equal(0.5);
+			libExpect(tmpResult.Roots[1].Weight).to.equal(0.5);
+			libExpect(tmpResult.Roots[0].Children[0].Weight).to.equal(0.25);
+			libExpect(tmpResult.Roots[0].Children[1].Weight).to.equal(0.25);
+		});
+
+		test('completion sums the weighted shares of the done items', function ()
+		{
+			// c1 (25%) and p2 (50%) done -> 75% overall, even though that is 2 of 3 tasks (67% by count).
+			let tmpItems =
+			[
+				{ Key: 'p1', ParentKey: null, Sort: 0 },
+				{ Key: 'p2', ParentKey: null, Done: true, Sort: 1 },
+				{ Key: 'c1', ParentKey: 'p1', Done: true, Sort: 0 },
+				{ Key: 'c2', ParentKey: 'p1', Done: false, Sort: 1 }
+			];
+			let tmpResult = libModel.decorate(tmpItems);
+			libExpect(tmpResult.Overall.Percent).to.equal(75);
+			libExpect(tmpResult.Overall).to.include({ LeafCount: 3, DoneCount: 2 });
+			libExpect(tmpResult.Roots[0].Percent).to.equal(50);
 		});
 
 		test('all leaves done marks the list complete', function ()

@@ -1,6 +1,6 @@
 {
   "name": "pict-section-checklist",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Inline-editable, nestable checklists for Pict: leaf checkboxes, per-tier and overall progress, a read-only view, and a pluggable data provider that defaults to in-memory AppData so it works in the browser with no backend.",
   "main": "source/Pict-Section-Checklist.js",
   "files": [
