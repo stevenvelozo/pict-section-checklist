@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pict-section-checklist demo</title>
+	<style>
+		/* Theme tokens a real Pict host supplies via its theme. The control reads only these
+		   var(--theme-color-*) names, so flipping the dark set below recolors the whole thing. */
+		:root {
+			--theme-color-background-primary: #ffffff;
+			--theme-color-background-secondary: #f7f9fb;
+			--theme-color-background-tertiary: #eef2f6;
+			--theme-color-background-panel: #ffffff;
+			--theme-color-background-hover: #eef2f6;
+			--theme-color-text-primary: #1f2430;
+			--theme-color-text-secondary: #5b6470;
+			--theme-color-text-muted: #97a1ab;
+			--theme-color-text-on-brand: #ffffff;
+			--theme-color-brand-primary: #2880a6;
+			--theme-color-border-default: #d6dde3;
+			--theme-color-border-light: #e7ecf0;
+			--theme-color-border-strong: #aab4bf;
+			--theme-color-status-success: #2e7d4f;
+			--theme-color-status-error: #c0392b;
+			--pict-modal-overlay-bg: rgba(15, 23, 32, 0.45);
+		}
+		body.pchk-dark {
+			--theme-color-background-primary: #14181f;
+			--theme-color-background-secondary: #1b212b;
+			--theme-color-background-tertiary: #232c38;
+			--theme-color-background-panel: #1b212b;
+			--theme-color-background-hover: #232c38;
+			--theme-color-text-primary: #e7ecf2;
+			--theme-color-text-secondary: #aab4c0;
+			--theme-color-text-muted: #6b7785;
+			--theme-color-text-on-brand: #ffffff;
+			--theme-color-brand-primary: #5cb3e0;
+			--theme-color-border-default: #324152;
+			--theme-color-border-light: #283341;
+			--theme-color-border-strong: #46586c;
+			--theme-color-status-success: #5fc377;
+			--theme-color-status-error: #ff7373;
+		}
+		html, body { margin: 0; min-height: 100%; background: var(--theme-color-background-tertiary); color: var(--theme-color-text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.2s ease, color 0.2s ease; }
+		.wrap { max-width: 640px; margin: 32px auto; padding: 0 18px; }
+		h1 { font-size: 20px; margin: 0 0 2px; }
+		.sub { color: var(--theme-color-text-secondary); font-size: 13px; margin-bottom: 16px; line-height: 1.5; }
+		.bar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+		.bar button { font: inherit; font-size: 13px; border: 1px solid var(--theme-color-border-default); background: var(--theme-color-background-panel); color: var(--theme-color-text-primary); border-radius: 7px; padding: 6px 12px; cursor: pointer; }
+		.bar button:hover { background: var(--theme-color-background-hover); }
+		.card { background: var(--theme-color-background-panel); border: 1px solid var(--theme-color-border-light); border-radius: 12px; padding: 18px 20px; }
+		.foot { color: var(--theme-color-text-muted); font-size: 12px; margin-top: 14px; text-align: center; }
+		code { background: var(--theme-color-background-tertiary); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+	</style>
+	<style id="PICT-CSS"></style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>pict-section-checklist</h1>
+		<div class="sub">Standalone, in the browser. Type to add an item, Enter for a sibling, Tab to nest, Shift+Tab to promote, Backspace on an empty line to remove. Check leaves off; groups show how far through their tier you are. Everything persists to localStorage.</div>
+		<div class="bar">
+			<button id="Demo-ReadOnly" onclick="checklistDemoToggleReadOnly()">Switch to read-only</button>
+			<button onclick="checklistDemoToggleTheme()">Toggle dark mode</button>
+			<button onclick="checklistDemoReset()">Reset</button>
+		</div>
+		<div class="card"><div id="Checklist-Container"></div></div>
+		<div class="foot">Default <code>InMemoryChecklistProvider</code>, no server. Pass a <code>DataProvider</code> to persist to a backend.</div>
+	</div>
+	<script src="./checklist_demo.min.js"></script>
+	<script>
+		Pict.safeOnDocumentReady(function ()
+		{
+			Pict.safeLoadPictApplication(window.ChecklistDemo, 1);
+		});
+	</script>
+</body>
+</html>

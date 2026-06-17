@@ -1,0 +1,18 @@
+{
+    "name": "checklist_backend_demo",
+    "version": "0.0.1",
+    "description": "pict-section-checklist demo with a custom async data provider (simulated backend latency)",
+    "main": "source/Checklist-Backend-Demo.js",
+    "scripts": {
+        "build": "npx quack build && npx quack copy",
+        "start": "node source/Checklist-Backend-Demo.js"
+    },
+    "author": "steven velozo <steven@velozo.com>",
+    "license": "MIT",
+    "copyFilesSettings": {
+        "whenFileExists": "overwrite"
+    },
+    "copyFiles": [
+        { "from": "./html/*", "to": "./dist/" }
+    ]
+}

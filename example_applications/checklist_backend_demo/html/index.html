@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pict-section-checklist backend demo</title>
+	<style>
+		:root {
+			--theme-color-background-primary: #ffffff;
+			--theme-color-background-secondary: #f7f9fb;
+			--theme-color-background-tertiary: #eef2f6;
+			--theme-color-background-panel: #ffffff;
+			--theme-color-background-hover: #eef2f6;
+			--theme-color-text-primary: #1f2430;
+			--theme-color-text-secondary: #5b6470;
+			--theme-color-text-muted: #97a1ab;
+			--theme-color-text-on-brand: #ffffff;
+			--theme-color-brand-primary: #6a4bbc;
+			--theme-color-border-default: #d6dde3;
+			--theme-color-border-light: #e7ecf0;
+			--theme-color-border-strong: #aab4bf;
+			--theme-color-status-success: #2e7d4f;
+			--theme-color-status-error: #c0392b;
+			--pict-modal-overlay-bg: rgba(15, 23, 32, 0.45);
+		}
+		html, body { margin: 0; min-height: 100%; background: var(--theme-color-background-tertiary); color: var(--theme-color-text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+		.wrap { max-width: 640px; margin: 32px auto; padding: 0 18px; }
+		h1 { font-size: 20px; margin: 0 0 2px; }
+		.sub { color: var(--theme-color-text-secondary); font-size: 13px; margin-bottom: 16px; line-height: 1.5; }
+		.card { background: var(--theme-color-background-panel); border: 1px solid var(--theme-color-border-light); border-radius: 12px; padding: 18px 20px; }
+		.foot { color: var(--theme-color-text-muted); font-size: 12px; margin-top: 14px; text-align: center; }
+		code { background: var(--theme-color-background-tertiary); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+	</style>
+	<style id="PICT-CSS"></style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>pict-section-checklist over a backend</h1>
+		<div class="sub">Same control, but every read and write goes through a custom <code>ChecklistDataProvider</code> with a simulated ~260ms latency. Add, check, nest, delete: each persists asynchronously, exactly as it would against a REST API. Mounted on context <code>WorkItem / 4012</code>.</div>
+		<div class="card"><div id="Checklist-Container"></div></div>
+		<div class="foot">A real provider calls <code>fetch()</code> in each primitive and maps rows to the neutral { List, Item } shapes.</div>
+	</div>
+	<script src="./checklist_backend_demo.min.js"></script>
+	<script>
+		Pict.safeOnDocumentReady(function ()
+		{
+			Pict.safeLoadPictApplication(window.ChecklistBackendDemo, 1);
+		});
+	</script>
+</body>
+</html>

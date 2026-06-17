@@ -1,0 +1,8 @@
+{
+    "EntrypointInputSourceFile": "/Users/steven/Code/retold/modules/pict/pict-section-checklist/example_applications/checklist_demo/source/Checklist-Demo.js",
+    "LibraryObjectName": "ChecklistDemo",
+    "LibraryOutputFolder": "/Users/steven/Code/retold/modules/pict/pict-section-checklist/example_applications/checklist_demo/dist/",
+    "LibraryUniminifiedFileName": "checklist_demo.compatible.js",
+    "LibraryMinifiedFileName": "checklist_demo.compatible.min.js",
+    "BrowserifyIgnore": []
+}

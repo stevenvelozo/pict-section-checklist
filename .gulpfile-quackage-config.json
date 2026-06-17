@@ -1,0 +1,8 @@
+{
+    "EntrypointInputSourceFile": "/Users/steven/Code/retold/modules/pict/pict-section-checklist/source/Pict-Section-Checklist.js",
+    "LibraryObjectName": "PictSectionChecklist",
+    "LibraryOutputFolder": "/Users/steven/Code/retold/modules/pict/pict-section-checklist/dist/",
+    "LibraryUniminifiedFileName": "pict-section-checklist.compatible.js",
+    "LibraryMinifiedFileName": "pict-section-checklist.compatible.min.js",
+    "BrowserifyIgnore": []
+}
