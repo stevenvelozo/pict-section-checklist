@@ -115,6 +115,8 @@ const _DefaultConfiguration =
 
 		.pchk-add { display: flex; align-items: center; gap: 7px; padding: 5px 4px; margin-top: 2px; }
 		.pchk-add-icon { width: 18px; flex: 0 0 auto; display: inline-flex; justify-content: center; color: var(--theme-color-text-muted, #97a1ab); }
+		.pchk-add-btn { align-items: center; border: none; background: none; padding: 0; cursor: pointer; border-radius: 4px; }
+		.pchk-add-btn:hover { color: var(--theme-color-brand-primary, #2880a6); }
 		.pchk-add-input { flex: 1; border: none; outline: none; background: none; font: inherit; color: var(--theme-color-text-primary, #1f2430); padding: 2px 4px; }
 		.pchk-add-input::placeholder { color: var(--theme-color-text-muted, #97a1ab); }
 		.pict-checklist.pchk-readonly .pchk-add { display: none; }
@@ -157,7 +159,7 @@ const _DefaultConfiguration =
 		},
 		{
 			Hash: 'Checklist-Add',
-			Template: /*html*/`<div class="pchk-add"><span class="pchk-add-icon">{~I:Plus~}</span><input class="pchk-add-input" id="{~D:Record.AddInputId~}" type="text" placeholder="{~D:Record.AddPlaceholder~}" autocomplete="off" onkeydown="if (event.key === 'Enter') { event.preventDefault(); _Pict.views['{~D:Record.ViewHash~}'].addItem(); } else if (event.key === 'Escape') { this.value = ''; this.blur(); }"></div>`
+			Template: /*html*/`<div class="pchk-add"><button type="button" class="pchk-add-icon pchk-add-btn" title="Add an item" onclick="_Pict.views['{~D:Record.ViewHash~}'].addRootEmpty()">{~I:Plus~}</button><input class="pchk-add-input" id="{~D:Record.AddInputId~}" type="text" placeholder="{~D:Record.AddPlaceholder~}" autocomplete="off" onkeydown="if (event.key === 'Enter') { event.preventDefault(); _Pict.views['{~D:Record.ViewHash~}'].addItem(); } else if (event.key === 'Escape') { this.value = ''; this.blur(); }"></div>`
 		},
 		{
 			Hash: 'Checklist-Empty',
@@ -376,6 +378,15 @@ class PictViewChecklist extends libPictView
 		this._ui.FocusKey = '__add__';
 		return this._provider.createItem({ ListKey: this._list.Key, ParentKey: null, Title: tmpTitle })
 			.then((pItem) => { this._fire('onItemAdded', pItem); return this._reloadAndChange(); });
+	}
+
+	// The "+" beside the add input: drop an empty item at the end of the list and put the cursor in it,
+	// so a click-then-type flow works alongside typing in the input and pressing Enter to continue.
+	addRootEmpty()
+	{
+		if (this.options.ReadOnly || !this._list) { return Promise.resolve(); }
+		return this._provider.createItem({ ListKey: this._list.Key, ParentKey: null, Title: '' })
+			.then((pItem) => { this._ui.FocusKey = pItem.Key; this._fire('onItemAdded', pItem); return this._reloadAndChange(); });
 	}
 
 	addChild(pKey)

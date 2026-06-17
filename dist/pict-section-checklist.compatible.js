@@ -5077,7 +5077,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
         // Indent per nesting level, in px.
         IndentPixels: 22,
         CSSPriority: 500,
-        CSS: /*css*/"\n\t\t.pict-checklist { font-family: var(--theme-typography-family-body, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif); font-size: 14px; color: var(--theme-color-text-primary, #1f2430); }\n\n\t\t.pchk-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }\n\t\t.pchk-list-title { font-size: 15px; font-weight: 600; color: var(--theme-color-text-primary, #1f2430); outline: none; border-radius: 4px; padding: 2px 5px; min-width: 40px; }\n\t\t.pchk-list-title:focus { background: var(--theme-color-background-tertiary, #eef2f6); }\n\n\t\t.pchk-overall { display: flex; align-items: center; gap: 8px; margin-left: auto; min-width: 170px; }\n\t\t.pchk-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--theme-color-background-tertiary, #e7ecf0); overflow: hidden; }\n\t\t.pchk-bar-fill { height: 100%; width: 0; background: var(--theme-color-brand-primary, #2880a6); border-radius: 3px; transition: width 0.18s ease; }\n\t\t.pict-checklist.pchk-complete .pchk-bar-fill { background: var(--theme-color-status-success, #2e7d4f); }\n\t\t.pchk-overall-label { font-size: 12px; color: var(--theme-color-text-secondary, #5b6470); white-space: nowrap; font-variant-numeric: tabular-nums; }\n\n\t\t.pchk-list, .pchk-children { list-style: none; margin: 0; padding: 0; }\n\t\t.pchk-children { padding-left: 22px; }\n\t\t.pchk-children:empty { display: none; }\n\n\t\t.pchk-row { display: flex; align-items: center; gap: 7px; padding: 3px 4px; border-radius: 6px; }\n\t\t.pchk-row:hover { background: var(--theme-color-background-secondary, #f7f9fb); }\n\n\t\t.pchk-caret { width: 18px; height: 18px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: var(--theme-color-text-muted, #97a1ab); border: none; background: none; padding: 0; font-size: 15px; }\n\t\t.pchk-caret:hover { color: var(--theme-color-text-secondary, #5b6470); }\n\t\t.pchk-leaf .pchk-caret { visibility: hidden; cursor: default; }\n\t\t.pchk-caret-closed { display: none; }\n\t\t.pchk-item.pchk-collapsed > .pchk-row > .pchk-caret .pchk-caret-open { display: none; }\n\t\t.pchk-item.pchk-collapsed > .pchk-row > .pchk-caret .pchk-caret-closed { display: inline-flex; }\n\n\t\t.pchk-check { width: 18px; height: 18px; flex: 0 0 auto; border: 1.5px solid var(--theme-color-border-strong, #a0a0a0); border-radius: 5px; background: var(--theme-color-background-panel, #fff); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; color: var(--theme-color-text-on-brand, #fff); font-size: 12px; padding: 0; }\n\t\t.pchk-group > .pchk-row > .pchk-check { display: none; }\n\t\t.pchk-check .pict-icon { opacity: 0; transform: scale(0.5); transition: opacity 0.1s ease, transform 0.1s ease; }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-check { background: var(--theme-color-brand-primary, #2880a6); border-color: var(--theme-color-brand-primary, #2880a6); }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-check .pict-icon { opacity: 1; transform: scale(1); }\n\t\t.pict-checklist.pchk-readonly .pchk-check { cursor: default; }\n\n\t\t.pchk-title { flex: 1; min-width: 0; outline: none; padding: 2px 4px; border-radius: 4px; line-height: 1.4; word-break: break-word; }\n\t\t.pchk-title:focus { background: var(--theme-color-background-tertiary, #eef2f6); box-shadow: inset 0 0 0 2px var(--theme-color-brand-primary, #2880a6); }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-title { color: var(--theme-color-text-muted, #97a1ab); text-decoration: line-through; }\n\n\t\t.pchk-group-progress { display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; flex: 0 0 auto; }\n\t\t.pchk-leaf .pchk-group-progress { display: none; }\n\t\t.pchk-minibar { width: 46px; height: 5px; border-radius: 3px; background: var(--theme-color-background-tertiary, #e7ecf0); overflow: hidden; }\n\t\t.pchk-minibar-fill { height: 100%; width: 0; background: var(--theme-color-brand-primary, #2880a6); border-radius: 3px; transition: width 0.18s ease; }\n\t\t.pchk-item.pchk-group-done > .pchk-row > .pchk-group-progress .pchk-minibar-fill { background: var(--theme-color-status-success, #2e7d4f); }\n\t\t.pchk-pct { font-size: 11px; color: var(--theme-color-text-secondary, #5b6470); min-width: 30px; text-align: right; font-variant-numeric: tabular-nums; }\n\n\t\t.pchk-actions { display: inline-flex; gap: 2px; opacity: 0; transition: opacity 0.1s ease; margin-left: 2px; flex: 0 0 auto; }\n\t\t.pchk-row:hover .pchk-actions { opacity: 1; }\n\t\t.pict-checklist.pchk-readonly .pchk-actions { display: none; }\n\t\t.pchk-actions button { border: none; background: none; cursor: pointer; color: var(--theme-color-text-muted, #97a1ab); width: 22px; height: 22px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; padding: 0; }\n\t\t.pchk-actions button:hover { background: var(--theme-color-background-hover, #eef2f6); color: var(--theme-color-text-secondary, #5b6470); }\n\t\t.pchk-actions .pchk-del:hover { color: var(--theme-color-status-error, #c0392b); }\n\n\t\t.pchk-add { display: flex; align-items: center; gap: 7px; padding: 5px 4px; margin-top: 2px; }\n\t\t.pchk-add-icon { width: 18px; flex: 0 0 auto; display: inline-flex; justify-content: center; color: var(--theme-color-text-muted, #97a1ab); }\n\t\t.pchk-add-input { flex: 1; border: none; outline: none; background: none; font: inherit; color: var(--theme-color-text-primary, #1f2430); padding: 2px 4px; }\n\t\t.pchk-add-input::placeholder { color: var(--theme-color-text-muted, #97a1ab); }\n\t\t.pict-checklist.pchk-readonly .pchk-add { display: none; }\n\n\t\t.pchk-empty { color: var(--theme-color-text-muted, #97a1ab); font-size: 13px; padding: 8px 4px; }\n\t",
+        CSS: /*css*/"\n\t\t.pict-checklist { font-family: var(--theme-typography-family-body, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif); font-size: 14px; color: var(--theme-color-text-primary, #1f2430); }\n\n\t\t.pchk-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }\n\t\t.pchk-list-title { font-size: 15px; font-weight: 600; color: var(--theme-color-text-primary, #1f2430); outline: none; border-radius: 4px; padding: 2px 5px; min-width: 40px; }\n\t\t.pchk-list-title:focus { background: var(--theme-color-background-tertiary, #eef2f6); }\n\n\t\t.pchk-overall { display: flex; align-items: center; gap: 8px; margin-left: auto; min-width: 170px; }\n\t\t.pchk-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--theme-color-background-tertiary, #e7ecf0); overflow: hidden; }\n\t\t.pchk-bar-fill { height: 100%; width: 0; background: var(--theme-color-brand-primary, #2880a6); border-radius: 3px; transition: width 0.18s ease; }\n\t\t.pict-checklist.pchk-complete .pchk-bar-fill { background: var(--theme-color-status-success, #2e7d4f); }\n\t\t.pchk-overall-label { font-size: 12px; color: var(--theme-color-text-secondary, #5b6470); white-space: nowrap; font-variant-numeric: tabular-nums; }\n\n\t\t.pchk-list, .pchk-children { list-style: none; margin: 0; padding: 0; }\n\t\t.pchk-children { padding-left: 22px; }\n\t\t.pchk-children:empty { display: none; }\n\n\t\t.pchk-row { display: flex; align-items: center; gap: 7px; padding: 3px 4px; border-radius: 6px; }\n\t\t.pchk-row:hover { background: var(--theme-color-background-secondary, #f7f9fb); }\n\n\t\t.pchk-caret { width: 18px; height: 18px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: var(--theme-color-text-muted, #97a1ab); border: none; background: none; padding: 0; font-size: 15px; }\n\t\t.pchk-caret:hover { color: var(--theme-color-text-secondary, #5b6470); }\n\t\t.pchk-leaf .pchk-caret { visibility: hidden; cursor: default; }\n\t\t.pchk-caret-closed { display: none; }\n\t\t.pchk-item.pchk-collapsed > .pchk-row > .pchk-caret .pchk-caret-open { display: none; }\n\t\t.pchk-item.pchk-collapsed > .pchk-row > .pchk-caret .pchk-caret-closed { display: inline-flex; }\n\n\t\t.pchk-check { width: 18px; height: 18px; flex: 0 0 auto; border: 1.5px solid var(--theme-color-border-strong, #a0a0a0); border-radius: 5px; background: var(--theme-color-background-panel, #fff); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; color: var(--theme-color-text-on-brand, #fff); font-size: 12px; padding: 0; }\n\t\t.pchk-group > .pchk-row > .pchk-check { display: none; }\n\t\t.pchk-check .pict-icon { opacity: 0; transform: scale(0.5); transition: opacity 0.1s ease, transform 0.1s ease; }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-check { background: var(--theme-color-brand-primary, #2880a6); border-color: var(--theme-color-brand-primary, #2880a6); }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-check .pict-icon { opacity: 1; transform: scale(1); }\n\t\t.pict-checklist.pchk-readonly .pchk-check { cursor: default; }\n\n\t\t.pchk-title { flex: 1; min-width: 0; outline: none; padding: 2px 4px; border-radius: 4px; line-height: 1.4; word-break: break-word; }\n\t\t.pchk-title:focus { background: var(--theme-color-background-tertiary, #eef2f6); box-shadow: inset 0 0 0 2px var(--theme-color-brand-primary, #2880a6); }\n\t\t.pchk-item.pchk-done > .pchk-row > .pchk-title { color: var(--theme-color-text-muted, #97a1ab); text-decoration: line-through; }\n\n\t\t.pchk-group-progress { display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; flex: 0 0 auto; }\n\t\t.pchk-leaf .pchk-group-progress { display: none; }\n\t\t.pchk-minibar { width: 46px; height: 5px; border-radius: 3px; background: var(--theme-color-background-tertiary, #e7ecf0); overflow: hidden; }\n\t\t.pchk-minibar-fill { height: 100%; width: 0; background: var(--theme-color-brand-primary, #2880a6); border-radius: 3px; transition: width 0.18s ease; }\n\t\t.pchk-item.pchk-group-done > .pchk-row > .pchk-group-progress .pchk-minibar-fill { background: var(--theme-color-status-success, #2e7d4f); }\n\t\t.pchk-pct { font-size: 11px; color: var(--theme-color-text-secondary, #5b6470); min-width: 30px; text-align: right; font-variant-numeric: tabular-nums; }\n\n\t\t.pchk-actions { display: inline-flex; gap: 2px; opacity: 0; transition: opacity 0.1s ease; margin-left: 2px; flex: 0 0 auto; }\n\t\t.pchk-row:hover .pchk-actions { opacity: 1; }\n\t\t.pict-checklist.pchk-readonly .pchk-actions { display: none; }\n\t\t.pchk-actions button { border: none; background: none; cursor: pointer; color: var(--theme-color-text-muted, #97a1ab); width: 22px; height: 22px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; padding: 0; }\n\t\t.pchk-actions button:hover { background: var(--theme-color-background-hover, #eef2f6); color: var(--theme-color-text-secondary, #5b6470); }\n\t\t.pchk-actions .pchk-del:hover { color: var(--theme-color-status-error, #c0392b); }\n\n\t\t.pchk-add { display: flex; align-items: center; gap: 7px; padding: 5px 4px; margin-top: 2px; }\n\t\t.pchk-add-icon { width: 18px; flex: 0 0 auto; display: inline-flex; justify-content: center; color: var(--theme-color-text-muted, #97a1ab); }\n\t\t.pchk-add-btn { align-items: center; border: none; background: none; padding: 0; cursor: pointer; border-radius: 4px; }\n\t\t.pchk-add-btn:hover { color: var(--theme-color-brand-primary, #2880a6); }\n\t\t.pchk-add-input { flex: 1; border: none; outline: none; background: none; font: inherit; color: var(--theme-color-text-primary, #1f2430); padding: 2px 4px; }\n\t\t.pchk-add-input::placeholder { color: var(--theme-color-text-muted, #97a1ab); }\n\t\t.pict-checklist.pchk-readonly .pchk-add { display: none; }\n\n\t\t.pchk-empty { color: var(--theme-color-text-muted, #97a1ab); font-size: 13px; padding: 8px 4px; }\n\t",
         Templates: [{
           Hash: 'Checklist-Section',
           Template: /*html*/"\n<div class=\"{~D:AppData.ChecklistActive.ContainerClass~}\" id=\"Checklist-Root-{~D:AppData.ChecklistActive.ViewHash~}\">\n\t<div class=\"pchk-header\">\n\t\t<span class=\"pchk-list-title\" id=\"{~D:AppData.ChecklistActive.TitleInputId~}\" {~D:AppData.ChecklistActive.List.EditAttr~} onkeydown=\"if (event.key === 'Enter') { event.preventDefault(); this.blur(); }\" onblur=\"_Pict.views['{~D:AppData.ChecklistActive.ViewHash~}'].commitListTitle(this)\">{~D:AppData.ChecklistActive.List.Title~}</span>\n\t\t{~TS:Checklist-Progress:AppData.ChecklistActive.ProgressSlot~}\n\t</div>\n\t<ul class=\"pchk-list\">{~TS:Checklist-Item:AppData.ChecklistActive.Roots~}</ul>\n\t{~TS:Checklist-Empty:AppData.ChecklistActive.EmptySlot~}\n\t{~TS:Checklist-Add:AppData.ChecklistActive.AddSlot~}\n</div>"
@@ -5089,7 +5089,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
           Template: /*html*/"\n<li class=\"{~D:Record.RowClass~}\" data-key=\"{~D:Record.Key~}\">\n\t<div class=\"pchk-row\">\n\t\t<button class=\"pchk-caret\" type=\"button\" title=\"Collapse / expand\" onclick=\"_Pict.views['{~D:Record.ViewHash~}'].toggleCollapse('{~D:Record.Key~}')\"><span class=\"pchk-caret-open\">{~I:ChevronDown~}</span><span class=\"pchk-caret-closed\">{~I:ChevronRight~}</span></button>\n\t\t<button class=\"pchk-check\" type=\"button\" title=\"Toggle done\" onclick=\"_Pict.views['{~D:Record.ViewHash~}'].toggleItem('{~D:Record.Key~}')\">{~I:Check~}</button>\n\t\t<span class=\"pchk-title\" id=\"{~D:Record.InputId~}\" {~D:Record.EditAttr~} onkeydown=\"_Pict.views['{~D:Record.ViewHash~}'].onTitleKeydown('{~D:Record.Key~}', event, this)\" onblur=\"_Pict.views['{~D:Record.ViewHash~}'].commitTitle('{~D:Record.Key~}', this)\">{~D:Record.Title~}</span>\n\t\t<span class=\"pchk-group-progress\"><span class=\"pchk-minibar\"><span class=\"pchk-minibar-fill\" style=\"width:{~D:Record.Percent~}%\"></span></span><span class=\"pchk-pct\">{~D:Record.Percent~}%</span></span>\n\t\t<span class=\"pchk-actions\"><button type=\"button\" class=\"pchk-addchild\" title=\"Add sub-item\" onclick=\"_Pict.views['{~D:Record.ViewHash~}'].addChild('{~D:Record.Key~}')\">{~I:Plus~}</button><button type=\"button\" class=\"pchk-del\" title=\"Delete\" onclick=\"_Pict.views['{~D:Record.ViewHash~}'].confirmDelete('{~D:Record.Key~}')\">{~I:Trash~}</button></span>\n\t</div>\n\t<ul class=\"pchk-children\">{~TS:Checklist-Item:Record.Children~}</ul>\n</li>"
         }, {
           Hash: 'Checklist-Add',
-          Template: /*html*/"<div class=\"pchk-add\"><span class=\"pchk-add-icon\">{~I:Plus~}</span><input class=\"pchk-add-input\" id=\"{~D:Record.AddInputId~}\" type=\"text\" placeholder=\"{~D:Record.AddPlaceholder~}\" autocomplete=\"off\" onkeydown=\"if (event.key === 'Enter') { event.preventDefault(); _Pict.views['{~D:Record.ViewHash~}'].addItem(); } else if (event.key === 'Escape') { this.value = ''; this.blur(); }\"></div>"
+          Template: /*html*/"<div class=\"pchk-add\"><button type=\"button\" class=\"pchk-add-icon pchk-add-btn\" title=\"Add an item\" onclick=\"_Pict.views['{~D:Record.ViewHash~}'].addRootEmpty()\">{~I:Plus~}</button><input class=\"pchk-add-input\" id=\"{~D:Record.AddInputId~}\" type=\"text\" placeholder=\"{~D:Record.AddPlaceholder~}\" autocomplete=\"off\" onkeydown=\"if (event.key === 'Enter') { event.preventDefault(); _Pict.views['{~D:Record.ViewHash~}'].addItem(); } else if (event.key === 'Escape') { this.value = ''; this.blur(); }\"></div>"
         }, {
           Hash: 'Checklist-Empty',
           Template: /*html*/"<div class=\"pchk-empty\">{~D:Record.Message~}</div>"
@@ -5143,13 +5143,23 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
         }, {
           key: "onAfterInitializeAsync",
           value: function onAfterInitializeAsync(fCallback) {
-            this._ensureModal();
-            this._initProvider();
-            this._reload().then(function () {
+            this.mount().then(function () {
               return fCallback();
             }).catch(function () {
               return fCallback();
             });
+          }
+
+          // Bring the control fully up: register the modal, wire the data provider, load + paint. The async
+          // init calls this for the normal (standalone) case. A host that adds the view DYNAMICALLY -- after
+          // the app has initialized, when pict's addView does not run the async lifecycle -- should call
+          // initialize() then mount() itself.
+        }, {
+          key: "mount",
+          value: function mount() {
+            this._ensureModal();
+            this._initProvider();
+            return this._reload();
           }
         }, {
           key: "onBeforeRender",
@@ -5379,10 +5389,30 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               return _this33._reloadAndChange();
             });
           }
+
+          // The "+" beside the add input: drop an empty item at the end of the list and put the cursor in it,
+          // so a click-then-type flow works alongside typing in the input and pressing Enter to continue.
+        }, {
+          key: "addRootEmpty",
+          value: function addRootEmpty() {
+            var _this34 = this;
+            if (this.options.ReadOnly || !this._list) {
+              return Promise.resolve();
+            }
+            return this._provider.createItem({
+              ListKey: this._list.Key,
+              ParentKey: null,
+              Title: ''
+            }).then(function (pItem) {
+              _this34._ui.FocusKey = pItem.Key;
+              _this34._fire('onItemAdded', pItem);
+              return _this34._reloadAndChange();
+            });
+          }
         }, {
           key: "addChild",
           value: function addChild(pKey) {
-            var _this34 = this;
+            var _this35 = this;
             if (this.options.ReadOnly || !this._list) {
               return Promise.resolve();
             }
@@ -5394,25 +5424,25 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               Title: '',
               Sort: tmpSort
             }).then(function (pItem) {
-              _this34._ui.FocusKey = pItem.Key;
+              _this35._ui.FocusKey = pItem.Key;
               // A new child also expands the (now) group so it is visible.
-              var tmpParent = _this34._itemByKey(pKey);
+              var tmpParent = _this35._itemByKey(pKey);
               if (tmpParent && tmpParent.Collapsed) {
-                return _this34._provider.updateItem(pKey, {
+                return _this35._provider.updateItem(pKey, {
                   Collapsed: false
                 }).then(function () {
-                  _this34._fire('onItemAdded', pItem);
-                  return _this34._reloadAndChange();
+                  _this35._fire('onItemAdded', pItem);
+                  return _this35._reloadAndChange();
                 });
               }
-              _this34._fire('onItemAdded', pItem);
-              return _this34._reloadAndChange();
+              _this35._fire('onItemAdded', pItem);
+              return _this35._reloadAndChange();
             });
           }
         }, {
           key: "addSibling",
           value: function addSibling(pKey) {
-            var _this35 = this;
+            var _this36 = this;
             if (this.options.ReadOnly || !this._list) {
               return Promise.resolve();
             }
@@ -5432,15 +5462,15 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               Title: '',
               Sort: tmpSort
             }).then(function (pItem) {
-              _this35._ui.FocusKey = pItem.Key;
-              _this35._fire('onItemAdded', pItem);
-              return _this35._reloadAndChange();
+              _this36._ui.FocusKey = pItem.Key;
+              _this36._fire('onItemAdded', pItem);
+              return _this36._reloadAndChange();
             });
           }
         }, {
           key: "commitTitle",
           value: function commitTitle(pKey, pElement) {
-            var _this36 = this;
+            var _this37 = this;
             if (this.options.ReadOnly) {
               return Promise.resolve();
             }
@@ -5454,11 +5484,11 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
             return this._provider.updateItem(pKey, {
               Title: tmpTitle
             }).then(function () {
-              _this36._fire('onItemEdited', {
+              _this37._fire('onItemEdited', {
                 Key: pKey,
                 Title: tmpTitle
               });
-              _this36._fire('onChange', {
+              _this37._fire('onChange', {
                 Event: 'onItemEdited',
                 Payload: {
                   Key: pKey
@@ -5469,7 +5499,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
         }, {
           key: "commitListTitle",
           value: function commitListTitle(pElement) {
-            var _this37 = this;
+            var _this38 = this;
             if (this.options.ReadOnly || this.options.EditableTitle === false || !this._list) {
               return Promise.resolve();
             }
@@ -5481,11 +5511,11 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
             return this._provider.updateList(this._list.Key, {
               Title: tmpTitle
             }).then(function () {
-              _this37._fire('onListRenamed', {
-                Key: _this37._list.Key,
+              _this38._fire('onListRenamed', {
+                Key: _this38._list.Key,
                 Title: tmpTitle
               });
-              _this37._fire('onChange', {
+              _this38._fire('onChange', {
                 Event: 'onListRenamed',
                 Payload: {
                   Title: tmpTitle
@@ -5523,7 +5553,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
         }, {
           key: "indentItem",
           value: function indentItem(pKey) {
-            var _this38 = this;
+            var _this39 = this;
             if (this.options.ReadOnly) {
               return Promise.resolve();
             }
@@ -5547,18 +5577,18 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               Sort: tmpSort
             }).then(function () {
               if (tmpNewParent.Collapsed) {
-                return _this38._provider.updateItem(tmpNewParent.Key, {
+                return _this39._provider.updateItem(tmpNewParent.Key, {
                   Collapsed: false
                 });
               }
             }).then(function () {
-              return _this38._reloadAndChange();
+              return _this39._reloadAndChange();
             });
           }
         }, {
           key: "outdentItem",
           value: function outdentItem(pKey) {
-            var _this39 = this;
+            var _this40 = this;
             if (this.options.ReadOnly) {
               return Promise.resolve();
             }
@@ -5578,13 +5608,13 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               ParentKey: tmpGrandKey,
               Sort: tmpSort
             }).then(function () {
-              return _this39._reloadAndChange();
+              return _this40._reloadAndChange();
             });
           }
         }, {
           key: "confirmDelete",
           value: function confirmDelete(pKey) {
-            var _this40 = this;
+            var _this41 = this;
             if (this.options.ReadOnly) {
               return Promise.resolve();
             }
@@ -5600,18 +5630,18 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
               if (!pOk) {
                 return;
               }
-              return _this40._provider.deleteItem(pKey).then(function () {
-                _this40._fire('onItemDeleted', {
+              return _this41._provider.deleteItem(pKey).then(function () {
+                _this41._fire('onItemDeleted', {
                   Key: pKey
                 });
-                return _this40._reloadAndChange();
+                return _this41._reloadAndChange();
               });
             });
           }
         }, {
           key: "_deleteAndFocusPrev",
           value: function _deleteAndFocusPrev(pKey) {
-            var _this41 = this;
+            var _this42 = this;
             var tmpItem = this._itemByKey(pKey);
             if (!tmpItem) {
               return Promise.resolve();
@@ -5627,10 +5657,10 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
             var tmpPrev = tmpIndex > 0 ? tmpSiblings[tmpIndex - 1] : null;
             this._ui.FocusKey = tmpPrev ? tmpPrev.Key : null;
             return this._provider.deleteItem(pKey).then(function () {
-              _this41._fire('onItemDeleted', {
+              _this42._fire('onItemDeleted', {
                 Key: pKey
               });
-              return _this41._reloadAndChange();
+              return _this42._reloadAndChange();
             });
           }
 
@@ -5657,9 +5687,9 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
         }, {
           key: "_reloadAndChange",
           value: function _reloadAndChange() {
-            var _this42 = this;
+            var _this43 = this;
             return this._reload().then(function () {
-              return _this42._fire('onChange', {
+              return _this43._fire('onChange', {
                 Event: 'onChange'
               });
             });

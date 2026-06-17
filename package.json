@@ -1,31 +1,31 @@
 {
-    "name": "pict-section-checklist",
-    "version": "1.0.0",
-    "description": "Inline-editable, nestable checklists for Pict: leaf checkboxes, per-tier and overall progress, a read-only view, and a pluggable data provider that defaults to in-memory AppData so it works in the browser with no backend.",
-    "main": "source/Pict-Section-Checklist.js",
-    "files": [
-        "source"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fable-retold/pict-section-checklist.git"
-    },
-    "scripts": {
-        "test": "npx mocha -u tdd -R spec --exit test/*_tests.js",
-        "start": "node source/Pict-Section-Checklist.js",
-        "build": "npx quack build && (cd example_applications/checklist_demo && npx quack build && npx quack copy) && (cd example_applications/checklist_backend_demo && npx quack build && npx quack copy)"
-    },
-    "author": "steven velozo <steven@velozo.com>",
-    "license": "MIT",
-    "dependencies": {
-        "pict-section-modal": "^1.1.4",
-        "pict-view": "^1.0.68"
-    },
-    "devDependencies": {
-        "chai": "^4.5.0",
-        "mocha": "^11.0.1",
-        "pict": "^1.0.372",
-        "pict-application": "^1.0.34",
-        "quackage": "^1.3.0"
-    }
+  "name": "pict-section-checklist",
+  "version": "1.0.1",
+  "description": "Inline-editable, nestable checklists for Pict: leaf checkboxes, per-tier and overall progress, a read-only view, and a pluggable data provider that defaults to in-memory AppData so it works in the browser with no backend.",
+  "main": "source/Pict-Section-Checklist.js",
+  "files": [
+    "source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fable-retold/pict-section-checklist.git"
+  },
+  "scripts": {
+    "test": "npx mocha -u tdd -R spec --exit test/*_tests.js",
+    "start": "node source/Pict-Section-Checklist.js",
+    "build": "npx quack build && (cd example_applications/checklist_demo && npx quack build && npx quack copy) && (cd example_applications/checklist_backend_demo && npx quack build && npx quack copy)"
+  },
+  "author": "steven velozo <steven@velozo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pict-section-modal": "^1.1.4",
+    "pict-view": "^1.0.68"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.0.1",
+    "pict": "^1.0.372",
+    "pict-application": "^1.0.34",
+    "quackage": "^1.3.0"
+  }
 }
